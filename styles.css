@@ -258,7 +258,7 @@ h6 {
 
 .contact-icon {
   font-size: 1.5rem;
-  color: var(--primary-blue);
+  color: var(--white);
   margin-right: 10px;
   width: 30px;
 }
@@ -392,3 +392,4 @@ footer {
 .navbar.scrolled .navbar-toggler-icon {
   filter: brightness(0) invert(0.3) sepia(1) saturate(5) hue-rotate(180deg); /* Different state */
 }
+
