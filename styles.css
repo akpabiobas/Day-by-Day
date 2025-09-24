@@ -380,6 +380,9 @@ footer {
   .preloader-logo {
     font-size: 2.5rem;
   }
+  .footer-logo img{
+    width: 40%;
+  }
 }
 .navbar-toggler-icon {
   filter: brightness(0) invert(1); /* Makes it white */
@@ -392,5 +395,6 @@ footer {
 .navbar.scrolled .navbar-toggler-icon {
   filter: brightness(0) invert(0.3) sepia(1) saturate(5) hue-rotate(180deg); /* Different state */
 }
+
 
 
