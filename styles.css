@@ -22,7 +22,13 @@ h6 {
   font-family: 'Montserrat', sans-serif;
   font-weight: 600;
 }
-
+a{
+  text-decoration: none;
+  color: var(--dark-navy);
+}
+a: hover{
+  text-decoration: none;
+}
 .navbar {
   background-color: rgba(0, 0, 0, 0);
   width: 100%;
@@ -395,6 +401,7 @@ footer {
 .navbar.scrolled .navbar-toggler-icon {
   filter: brightness(0) invert(0.3) sepia(1) saturate(5) hue-rotate(180deg); /* Different state */
 }
+
 
 
 
