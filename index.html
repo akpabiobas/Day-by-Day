@@ -29,6 +29,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
   </head>
   <body>
+    <div class="trail"></div>
+
     <!-- Preloader -->
     <div class="preloader" id="preloader">
       <div class="preloader-content">
@@ -654,5 +656,28 @@
       }
     </script>
     <script src="https://cdn.lordicon.com/lordicon.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script>
+      const trail = document.querySelector('.trail');
+      let mouseX = 0,
+        mouseY = 0;
+
+      window.addEventListener('mousemove', (e) => {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+        const offsetX = -10; // horizontal shift (positive = right, negative = left)
+        const offsetY = -6; // vertical shift (positive = down, negative = up)
+
+        mouseX = e.clientX + offsetX;
+        mouseY = e.clientY + offsetY;
+        // animate dot towards mouse
+        gsap.to(trail, {
+          duration: 0.2,
+          x: mouseX,
+          y: mouseY,
+          ease: 'power2.out',
+        });
+      });
+    </script>
   </body>
 </html>
