@@ -5,6 +5,9 @@
   --white: #ffffff;
   --black: #000000;
 }
+html{
+  scroll-behavior: smooth;
+}
 
 body {
   font-family: 'Poppins', sans-serif;
@@ -26,9 +29,10 @@ a{
   text-decoration: none;
   color: var(--dark-navy);
 }
-a: hover{
+a:hover{
   text-decoration: none;
 }
+
 .navbar {
   background-color: rgba(0, 0, 0, 0);
   width: 100%;
@@ -56,7 +60,18 @@ a: hover{
 
 .navbar-nav .nav-link:hover,
 .navbar-nav .nav-link.active {
-  color: var(--primary-blue) !important;
+  color: var(--white) !important;
+}
+.underline {
+  height: 2px;
+  background-color: var(--primary-blue);
+  width: 0;
+  transition: width 0.3s;
+}
+@media (min-width: 1024px) {
+  .nav-item:hover .underline {
+    width: 100%;
+  }
 }
 
 .btn-primary {
@@ -137,51 +152,142 @@ a: hover{
 }
 
 .service-card {
-  background-color: var(--white);
-  border-radius: 15px;
-  padding: 2rem;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  background: linear-gradient(135deg, var(--white) 0%, #f8f9fa 100%);
+  border-radius: 20px;
+  padding: 2.5rem 2rem;
+  box-shadow: 
+    0 10px 30px rgba(0, 114, 206, 0.1),
+    0 1px 3px rgba(0, 0, 0, 0.05);
   height: 100%;
-  transition: all 0.6s ease;
-  border: 1px solid #f0f0f0;
+  transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  border: none;
   margin-bottom: 2rem;
   position: relative;
   overflow: hidden;
   opacity: 0;
-  transform: translateY(30px);
+  transform: translateY(30px) scale(0.95);
 }
 
 .service-card::before {
   content: '';
   position: absolute;
   top: 0;
-  left: 0;
-  width: 5px;
+  left: -100%;
+  width: 100%;
   height: 100%;
-  background-color: var(--primary-blue);
-  transition: width 0.3s ease;
+  background: linear-gradient(90deg, 
+    transparent, 
+    rgba(0, 114, 206, 0.1), 
+    transparent);
+  transition: left 0.6s ease;
+}
+
+.service-card::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary-blue), var(--light-sky-blue));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
 }
 
 .service-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 15px 30px rgba(46, 204, 113, 0.1);
+  transform: translateY(-12px) scale(1.02);
+  box-shadow: 
+    0 20px 40px rgba(0, 114, 206, 0.15),
+    0 5px 15px rgba(0, 0, 0, 0.07);
 }
 
 .service-card:hover::before {
-  width: 100%;
-  opacity: 0.1;
+  left: 100%;
+}
+
+.service-card:hover::after {
+  transform: scaleX(1);
 }
 
 .service-icon {
-  font-size: 2.5rem;
-  color: var(--primary-blue);
+  font-size: 3rem;
+  background: linear-gradient(135deg, var(--primary-blue), var(--light-sky-blue));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
   margin-bottom: 1.5rem;
+  display: inline-block;
+  transition: all 0.4s ease;
+}
+
+.service-card:hover .service-icon {
+  transform: scale(1.1) rotate(5deg);
 }
 
 .card-title {
   font-weight: 700;
-  font-size: 1.3rem;
+  font-size: 1.4rem;
   margin-bottom: 1rem;
+  background: linear-gradient(135deg, var(--dark-navy), var(--primary-blue));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: all 0.3s ease;
+}
+
+.service-card:hover .card-title {
+  transform: translateX(5px);
+}
+
+.card-text {
+  color: #666;
+  line-height: 1.6;
+  transition: all 0.3s ease;
+}
+
+.service-card:hover .card-text {
+  color: #555;
+  transform: translateX(3px);
+}
+
+/* Add a subtle floating animation */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+.service-card:hover {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Add a shine effect on hover */
+.service-card .card-body {
+  position: relative;
+  z-index: 2;
+}
+
+.service-card .card-body::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    45deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  transform: rotate(45deg);
+  transition: all 0.6s ease;
+  opacity: 0;
+}
+
+.service-card:hover .card-body::before {
+  opacity: 1;
+  left: 100%;
 }
 
 .mission-section {
@@ -278,7 +384,6 @@ footer {
 .footer-logo {
   font-family: 'Montserrat', sans-serif;
   font-weight: 700;
-  font-size: 1.8rem;
   color: var(--white);
   margin-bottom: 20px;
 }
@@ -387,7 +492,7 @@ footer {
     font-size: 2.5rem;
   }
   .footer-logo img{
-    width: 50%;
+    width: 40%;
   }
 }
 .navbar-toggler-icon {
@@ -401,8 +506,6 @@ footer {
 .navbar.scrolled .navbar-toggler-icon {
   filter: brightness(0) invert(0.3) sepia(1) saturate(5) hue-rotate(180deg); /* Different state */
 }
-
-
-
-
-
+.footer-mail{
+  color: white;
+}
