@@ -128,7 +128,7 @@
         <h2 class="section-title text-light">Mission & Vision</h2>
         <div class="row">
           <div class="col-lg-6 col-md-6 mb-4">
-            <div class="mission-vision-card stagger-item pt-2">
+            <div class="mission-vision-card stagger-item">
               <i class="fas fa-bullseye mission-icon"></i>
               <h3>Our Mission</h3>
               <p>
@@ -193,9 +193,9 @@
     <section class="py-5 services-section" id="services">
       <div class="container">
         <h2 class="section-title">Our Services</h2>
-
-        <h3 class="text-center mb-4" style="color: var(--primary-blue)">
-          Immigration & Study Services
+        
+        <h3 class="text-center mb-4 " style="color: var(--primary-blue);">
+          <span class="immigration-heading">Immigration & Study Services</span>
         </h3>
         <div class="row mb-5">
           <div class="col-md-6 col-lg-4 pb-3">
@@ -276,7 +276,7 @@
           <div class="col-md-6 col-lg-6 mb-4">
             <div class="">
               <div class=" p-4">
-                <i class="fas fa-comments service-icon"></i>
+                <i class="fas fa-comments service-icon "></i>
                 <h5 class="card-title">Expert Advice</h5>
                 <p class="card-text">
                   Get professional guidance tailored to your unique travel and immigration needs, ensuring every step of your journey abroad is smooth, stress-free, and successful.
@@ -301,7 +301,7 @@
           <div class="col-md-6 col-lg-6 mb-4">
             <div class="stagger-item">
               <div class="p-4">
-                <i class="fas fa-calendar-check service-icon"></i>
+                <i class="fas fa-calendar-check service-icon "></i>
                 <h5 class="card-title">Bookings & Reservations</h5>
                 <p class="card-text">
                   Seamlessly manage your flight, hotel, and transportation bookings with our reliable services, ensuring convenience, comfort, and peace of mind throughout your entire journey.
@@ -319,7 +319,7 @@
           <div class="col-md-6 col-lg-6 mb-4">
             <div class="stagger-item">
               <div class="p-4">
-                <i class="fas fa-route service-icon"></i>
+                <i class="fas fa-route service-icon "></i>
                 <h5 class="card-title">Itinerary Planning</h5>
                 <p class="card-text">
                   Enjoy customized travel plans carefully tailored to your preferences, ensuring every destination, activity, and experience aligns perfectly with your goals, budget, and dream journey.
@@ -448,7 +448,20 @@
                 <a href="mailto:info@daybydayintl.com">info@daybydayintl.com</a>
               </p>
             </div>
-            <div class="card shadow">
+            <div class="map-container">
+              <!-- Google Maps Embed -->
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3963.952912260219!2d3.375295414770757!3d6.5276316452784755!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103b8b2ae68280c1%3A0xdc9e87a367c3d9cb!2sLagos%2C%20Nigeria!5e0!3m2!1sen!2s!4v1625047702390!5m2!1sen!2s"
+                width="100%"
+                height="100%"
+                style="border: 0; border-radius: 10px;"
+                allowfullscreen=""
+                loading="lazy"
+              ></iframe>
+            </div>
+          </div>
+          <div class="col-lg-6">
+                        <div class="card shadow">
               <div class="card-body p-5">
                 <h3 class="heading mb-4">Send us a Message</h3>
                 <form>
@@ -497,19 +510,7 @@
                 </form>
               </div>
             </div>
-          </div>
-          <div class="col-lg-6">
-            <div class="map-container">
-              <!-- Google Maps Embed -->
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3963.952912260219!2d3.375295414770757!3d6.5276316452784755!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103b8b2ae68280c1%3A0xdc9e87a367c3d9cb!2sLagos%2C%20Nigeria!5e0!3m2!1sen!2s!4v1625047702390!5m2!1sen!2s"
-                width="100%"
-                height="400"
-                style="border: 0; border-radius: 10px"
-                allowfullscreen=""
-                loading="lazy"
-              ></iframe>
-            </div>
+            
           </div>
         </div>
       </div>
@@ -593,10 +594,11 @@
           </div>
         </div>
         <hr class="my-4" style="border-color: rgba(255, 255, 255, 0.1)" />
-        <div class="text-center">
+        <div class="copyright d-flex justify-content-between">
           <p>
-            &copy; 2023 Day By Day Global Link Consultancy. All Rights Reserved.
+            &copy; 2023 Day By Day Global Link Consultancy.
           </p>
+          <p> All Rights Reserved.</p>
         </div>
       </div>
     </footer>
@@ -742,5 +744,3 @@
     </script>
   </body>
 </html>
-
-

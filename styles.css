@@ -222,8 +222,8 @@ a:hover {
   font-size: 3rem;
   background: linear-gradient(
     135deg,
-    var(--primary-blue),
-    var(--light-sky-blue)
+    var(--light-sky-blue),
+    var(--primary-blue)
   );
   -webkit-background-clip: text;
   background-clip: text;
@@ -515,6 +515,11 @@ footer {
     display: none;
   }
 }
+@media (max-width: 426px){
+  .copyright{
+    font-size: 0.7rem;
+  }
+}
 .navbar-toggler-icon {
   filter: brightness(0) invert(1); /* Makes it white */
 }
@@ -541,4 +546,10 @@ footer {
   pointer-events: none;
   transform: translate(-50%, -50%);
   z-index: 9999;
+}
+.immigration-heading{
+  background-color: rgba(0, 0, 0, 0.03);
+  border-radius: 50px;
+  padding: 8px 20px;
+  letter-spacing: 1px;
 }
